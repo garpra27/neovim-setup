@@ -6,6 +6,7 @@ require('configs.treesitter')
 require('configs.mason-lsp')
 require('configs.completion')
 require('configs.noice')
+require('configs.toggle-term')
 
 
 
