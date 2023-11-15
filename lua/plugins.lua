@@ -38,6 +38,10 @@ return require('packer').startup(function(use)
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
 
+	use 'rcarriga/nvim-notify'
+	use 'MunifTanjim/nui.nvim'
+	use 'folke/noice.nvim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
