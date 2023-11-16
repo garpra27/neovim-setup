@@ -1,8 +1,7 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap.set
-
--- Normal mode
-keymap('i', 'jj', '<Esc>')
+-- Normal mode & Saved
+keymap('i', 'jj', '<Esc>:w<CR>')
 
 keymap('n', '<C-a>', 'gg<S-v>G') --Select all
 
