@@ -18,5 +18,10 @@ end
 
 -- Set up keybindings for Python files
 setup_filetype_keybindings('python', {
-	{ mode = 'n', keys = '<leader>rt', command = ':TermExec cmd="python %:p"<CR>' },
+	{ mode = 'n', keys = '<leader>rt', command = ':TermExec cmd="python %"<CR>' },
+})
+
+-- Set up keybindings for Java files
+setup_filetype_keybindings('java', {
+	{ mode = 'n', keys = '<leader>rt', command = ':TermExec cmd="java %"<CR>' },
 })
