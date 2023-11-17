@@ -1,10 +1,8 @@
-
 return {
-	'sekke276/dark_flat.nvim',
+	'bignimbus/pop-punk.vim',
 	priority = 1000,
 	config = function()
-		vim.cmd[[colorscheme dark_flat]]
+		vim.cmd [[colorscheme pop-punk]]
 	end
 }
-
 

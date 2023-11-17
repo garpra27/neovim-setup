@@ -8,3 +8,8 @@ vt.tabstop = 2
 vt.softtabstop = 2
 vt.shiftwidth = 2
 vt.smarttab = true
+vt.termguicolors = true
+vt.modifiable = true
+
+vim.g.editorconfig = true
+

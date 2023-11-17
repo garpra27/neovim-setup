@@ -1,33 +1,55 @@
 return {
 	"williamboman/mason.nvim",
-  dependencies = {
+	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+		"neovim/nvim-lspconfig",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 
 	config = function()
 		local mason = require("mason")
 		local masonlsp = require("mason-lspconfig")
+		local mason_tool_installer = require("mason-tool-installer")
 
 		mason.setup({
 			ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
 		})
 		masonlsp.setup({
-			ensure_installed = { "lua_ls", "html", "emmet_ls", "cssls", "tsserver", "pyright" },
+			ensure_installed = {
+				"lua_ls",
+				"html",
+				"emmet_ls",
+				"cssls",
+				"tsserver",
+				"pyright",
+				"tailwindcss",
+			},
+		})
+
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"prettier",
+				"stylua",
+				"black",
+				"google-java-format",
+				"pylint",
+				"eslint_d",
+
+			},
 		})
 
 		local on_attach = function(_, _)
 			local keymap = vim.keymap.set
-			
+
 			keymap('n', '<leader>rn', vim.lsp.buf.rename, {})
 			keymap('n', '<leader>ca', vim.lsp.buf.code_action, {})
-			
+
 			keymap('n', 'gd', vim.lsp.buf.definition, {})
 			keymap('n', 'gi', vim.lsp.buf.implementation, {})
 			keymap('n', 'K', vim.lsp.buf.hover, {})
@@ -69,11 +91,4 @@ return {
 		}
 	end
 }
-
-
-
-
-
-
-
 

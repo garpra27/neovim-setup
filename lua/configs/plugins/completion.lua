@@ -8,7 +8,8 @@ return {
 	},
 
 	config = function()
-		local cmp = require'cmp'
+		local cmp = require 'cmp'
+		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
@@ -20,7 +21,7 @@ return {
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			}),
 			snippet = {
-				expand= function(args)
+				expand = function(args)
 					require('luasnip').lsp_expand(args.body)
 				end,
 			},
@@ -33,3 +34,4 @@ return {
 		})
 	end
 }
+
