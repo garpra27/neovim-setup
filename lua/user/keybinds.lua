@@ -1,4 +1,6 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 local keymap = vim.keymap.set
 -- Normal mode & Saved
 keymap('i', 'jj', '<Esc>')
@@ -11,4 +13,3 @@ keymap('n', '<C-a>', 'gg<S-v>G') --Select all
 keymap('n', 'ss', ':vsplit<Return>')
 keymap('n', '<C-Left>', '<C-w>H')
 keymap('n', '<C-Right>', '<C-w>L')
-

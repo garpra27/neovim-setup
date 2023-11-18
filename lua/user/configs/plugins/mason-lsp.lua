@@ -23,24 +23,12 @@ return {
 		masonlsp.setup({
 			ensure_installed = {
 				"lua_ls",
-				"html",
-				"emmet_ls",
-				"cssls",
-				"tsserver",
-				"pyright",
-				"tailwindcss",
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier",
 				"stylua",
-				"black",
-				"google-java-format",
-				"pylint",
-				"eslint_d",
-
 			},
 		})
 
@@ -59,36 +47,15 @@ return {
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 		local lsp = require("lspconfig")
-
-		lsp.lua_ls.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
+		local servers = {
+			"lua_ls",
 		}
 
-		lsp.html.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
-		}
-
-		lsp.emmet_ls.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
-		}
-
-		lsp.cssls.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
-		}
-
-		lsp.tsserver.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
-		}
-
-		lsp.pyright.setup {
-			on_attach = on_attach,
-			capabilities = capabilities
-		}
+		for _, server in ipairs(servers) do
+			lsp[server].setup {
+				on_attach = on_attach,
+				capabilities = capabilities
+			}
+		end
 	end
 }
-
