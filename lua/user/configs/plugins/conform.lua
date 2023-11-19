@@ -7,14 +7,14 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "black" },
+				css = { "prettier" },
+				html = { "prettier" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				python = { "black" },
-				java = { "google-java-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -31,4 +31,3 @@ return {
 		end, { desc = "Format file or range (in visual mode)" })
 	end
 }
-

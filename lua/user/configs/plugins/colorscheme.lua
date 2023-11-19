@@ -1,8 +1,7 @@
 return {
-	'bignimbus/pop-punk.vim',
+	"bignimbus/pop-punk.vim",
 	priority = 1000,
 	config = function()
-		vim.cmd [[colorscheme pop-punk]]
-	end
+		vim.cmd([[colorscheme pop-punk]])
+	end,
 }
-
